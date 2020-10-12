@@ -23,7 +23,8 @@ At this point we do not have any service definitions hence the console will be l
 Create the file db/data-model.cds and add the following data definition.
 
 
-```namespace my.bookshop;
+```
+namespace my.bookshop;
 using { Country, managed } from '@sap/cds/common';
 
 entity Books {
@@ -119,7 +120,8 @@ Now, when we try and get data for an entity from the browser, we get data that w
 ## Step 6
 Add sqlite persistence database.
 Execute the following command. 
-```cds deploy --to sqlite:bookshop.db
+```
+cds deploy --to sqlite:bookshop.db
 ```
 
 
