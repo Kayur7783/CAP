@@ -87,5 +87,39 @@ A service is listening to port 4004. Click "Expose and Open" to access the servi
 ```
 Click on Expose and open to test the service. 
 
+## Step 5
+Adding mock data for testing.
+In the db folder, create a new `csv` folder. 
+Create following files in the folder. 
+* my.bookshop-Authors.csv
+* my.bookshop-Books.csv
+
+The naming convention for the files is `<namespace>-<entity name>.csv`.
+Add the following data in my.bookshop-Authors.csv
+```
+ID;name
+101;Emily Brontë
+107;Charlote Brontë
+150;Edgar Allen Poe
+170;Richard Carpenter
+```
+
+Add the following data in my.bookshop-Books.csv
+```
+ID;title;author_ID;stock
+201;Wuthering Heights;101;12
+207;Jane Eyre;107;11
+251;The Raven;150;333
+252;Eleonora;150;555
+271;Catweazle;170;22
+```
+With cds watch running, you will notice that the data gets loaded in the in memory sqlite database immediately. 
+Now, when we try and get data for an entity from the browser, we get data that we have loaded just now. 
+
+## Step 6
+Add sqlite persistence database.
+Execute the following command. 
+```cds deploy --to sqlite:bookshop.db
+```
 
 
