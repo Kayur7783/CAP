@@ -1,23 +1,44 @@
-# Getting Started
+# Download the project from git
 
-Welcome to your new project.
+`git clone https://github.com/Kayur7783/bookshop.git`
+`cd bookshop`
+`cds watch`
 
-It contains these folders and files, following our recommended project layout:
+or you can follow the following steps to create this sample project.
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+## Step 1
 
+Execute `cds init bookshop` command in the terminal.
 
-## Next Steps
+## Step 2
 
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+Start a cds live re-load server using `cds watch`. 
+At this point we do not have any service definitions hence the console will be logged as follows. 
+
+## Step 3
+Create the file db/data-model.cds and add the following data definition.
+`namespace my.bookshop;
+using { Country, managed } from '@sap/cds/common';
+
+entity Books {
+  key ID : Integer;
+  title  : localized String;
+  author : Association to Authors;
+  stock  : Integer;
+}
+
+entity Authors {
+  key ID : Integer;
+  name   : String;
+  books  : Association to many Books on books.author = $self;
+}
+
+entity Orders : managed {
+  key ID  : UUID;
+  book    : Association to Books;
+  country : Country;
+  amount  : Integer;
+}`
 
 
 ## Learn More
