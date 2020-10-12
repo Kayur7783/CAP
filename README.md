@@ -17,7 +17,9 @@ At this point we do not have any service definitions hence the console will be l
 
 ## Step 3
 Create the file db/data-model.cds and add the following data definition.
-`namespace my.bookshop;
+
+
+```namespace my.bookshop;
 using { Country, managed } from '@sap/cds/common';
 
 entity Books {
@@ -38,9 +40,7 @@ entity Orders : managed {
   book    : Association to Books;
   country : Country;
   amount  : Integer;
-}`
+}```
 
 
-## Learn More
 
-Learn more at https://cap.cloud.sap/docs/get-started/.
