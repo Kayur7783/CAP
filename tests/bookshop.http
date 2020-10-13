@@ -5,14 +5,19 @@ GET http://localhost:4004/
 GET http://localhost:4004/catalog/$metadata
 
 ### Browsing Books
-GET http://localhost:4004/catalog/Books?
-# &$select=title,author
-# &$expand=currency
-# &sap-language=de
+GET http://localhost:4004/catalog/Books?&$select=title,author
+
 
 ### Browsing Authors
-GET http://localhost:4004/admin/Authors?
-# &$select=name,dateOfBirth,placeOfBirth
-# &$expand=books($select=title;$expand=currency)
-# &$filter=ID eq 101
-# &sap-language=de
+GET http://localhost:4004/catalog/Authors?&$select=name&$expand=books($select=title)&$filter=ID eq 180
+
+
+### Create Author
+POST http://localhost:4004/catalog/Authors
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+    "ID": 180,       
+    "name": "JK Rowling"
+}   
+
