@@ -239,4 +239,6 @@ Content-Type: application/json;IEEE754Compatible=true
 
 
 ```
+Thats how we can test and debug our applications. 
 
+Thanks you!
