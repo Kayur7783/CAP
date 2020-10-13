@@ -124,4 +124,12 @@ Execute the following command.
 cds deploy --to sqlite:bookshop.db
 ```
 
+This would create a sqlite file bookshop.db at the root of the project. 
+Lets open the file in the database explorer and check what is happening behind the scenes. 
+*Navigate to the explorer.
+*Select sqlite as database option. 
+*Add following file path in the input field for database file. `/home/user/projects/bookshop/bookshop.db`
+*Click Save Connection
+
+Your sqlite database created by cds deploy command is now available for examination and learning. 
 
