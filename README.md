@@ -182,7 +182,7 @@ Provide the following launch configuration.
       "name": "Run bookshop",
       "request": "launch",
       "type": "node",
-      "cwd": "/home/user/projects/bookshop",
+      "cwd": "${workspaceFolder}//bookshop",
       "runtimeExecutable": "npx",
       "runtimeArgs": [
         "-n"
